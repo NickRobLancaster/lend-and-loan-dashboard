@@ -1,7 +1,10 @@
 <script setup>
-import Leaderboard from "./components/Leaderboard.vue";
+// import { ref } from "vue";
+import Toasts from "./components/Toasts.vue";
 </script>
 
 <template>
-  <Leaderboard />
+  <Toasts />
+  <Boasts />
+  <router-view />
 </template>
