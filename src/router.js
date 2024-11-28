@@ -5,13 +5,13 @@ import { createRouter, createWebHistory } from "vue-router";
 const routes = [
   {
     path: "/",
-    name: "Dash",
-    component: () => import("./components/Dash.vue"), // Lazy-loaded
-  },
-  {
-    path: "/layout",
     name: "Dashboard Layout",
     component: () => import("./components/DashboardLayout.vue"), // Lazy-loaded
+  },
+  {
+    path: "/dash",
+    name: "Dash",
+    component: () => import("./components/Dash.vue"), // Lazy-loaded
   },
   {
     path: "/dashboard",
