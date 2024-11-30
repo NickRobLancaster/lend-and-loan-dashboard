@@ -20,6 +20,10 @@ const create_user = () => {
     profile_pic_url: "",
     first_name: "",
     last_name: "",
+    last_deal_count: {
+      count: 0,
+      created_at: new Date(),
+    },
   };
 };
 

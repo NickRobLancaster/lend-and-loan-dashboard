@@ -109,6 +109,16 @@ export const useMainStore = defineStore("main", {
     },
 
     post_fetch_routine() {
+      // if there is any use that doesn't have a last_deal_count along with last_deal_count.created_at, last_deal_count.count make sure to set them
+      this.users.forEach((user) => {
+        if (!user.last_deal_count) {
+          user.last_deal_count = {
+            count: 0,
+            created_at: new Date(),
+          };
+        }
+      });
+
       // if there is any user that has last_deal_count.created_at is yesterday, clear all with clear_last_deal_count
       const usersWithOldDealCount = this.users.filter((user) =>
         dayjs(user.last_deal_count.created_at).isBefore(dayjs(), "day")
