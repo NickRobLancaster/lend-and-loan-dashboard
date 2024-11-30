@@ -109,15 +109,15 @@ export const useMainStore = defineStore("main", {
     },
 
     post_fetch_routine() {
-      // if the last_deal_count.created_at is yesterday, clear the last_deal_count
-      this.users.forEach((user) => {
-        if (dayjs(user.last_deal_count.created_at).isBefore(dayjs(), "day")) {
-          user.last_deal_count = {
-            count: 0,
-            created_at: new Date(),
-          };
-        }
-      });
+      // if there is any user that has last_deal_count.created_at is yesterday, clear all with clear_last_deal_count
+      const usersWithOldDealCount = this.users.filter((user) =>
+        dayjs(user.last_deal_count.created_at).isBefore(dayjs(), "day")
+      );
+
+      //ensures consistency across all users
+      if (usersWithOldDealCount.length > 0) {
+        this.clear_last_deal_count();
+      }
 
       // need to loop over the getter_user_leaderboard and create a boast the pops up for 5 seconds and then disappears and continues to the next user
       const leaderboard = this.getter_user_leaderboard_today_only;
