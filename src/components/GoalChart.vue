@@ -52,6 +52,9 @@ const goal_chart_options = ref({
   indexAxis: "y", // Makes the bar chart horizontal
   scales: {
     x: {
+      grid: {
+        color: "rgba(20, 84, 145, 0.8)", // Change X-axis grid color
+      },
       ticks: {
         font: {
           size: 16, // Change this value to adjust the font size
@@ -60,6 +63,9 @@ const goal_chart_options = ref({
       },
     },
     y: {
+      grid: {
+        color: "rgba(20, 84, 145, 0.8)", // Change X-axis grid color
+      },
       ticks: {
         font: {
           size: 16, // Change this value to adjust the font size

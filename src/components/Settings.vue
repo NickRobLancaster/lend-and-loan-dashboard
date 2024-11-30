@@ -42,7 +42,7 @@ const show_logs = ref(false);
         v-if="store.show_settings"
         class="fixed top-0 right-0 h-screen w-1/2 bg-base-100 z-60"
       >
-        <div class="flex flex-col gap-2 p-5 h-full w-full">
+        <div class="flex flex-col gap-5 p-5 h-full w-full">
           <div class="flex flex-row gap-5 items-center">
             <h1 class="text-2xl font-bold text-gray-100 text-left">
               <span class="text-white"> Settings </span>
@@ -51,11 +51,18 @@ const show_logs = ref(false);
             <div class="flex flex-row items-center gap-2 ml-auto">
               <button
                 class="btn btn-sm bg-red-500 hover:bg-red-600 text-white ml-auto"
+                @click="store.clear_last_deal_count"
+                title="Wipe All Local Storage Data"
+              >
+                Reset Boasts
+              </button>
+              <!-- <button
+                class="btn btn-sm bg-red-500 hover:bg-red-600 text-white ml-auto"
                 @click=""
                 title="Wipe All Local Storage Data"
               >
                 Reset To Default
-              </button>
+              </button> -->
               <button
                 class="btn btn-sm bg-emerald-500 hover:bg-emerald-600 text-white"
                 @click="store.save_settings"
@@ -160,18 +167,18 @@ const show_logs = ref(false);
           </div>
 
           <div class="flex flex-col gap-5 text-white">
-            <div class="flex flex-row gap-5">
+            <div class="flex flex-row">
               <!-- click to email -->
               <a
                 href="mailto:support@finnypi.com"
-                class="btn btn-primary flex-1"
+                class="btn bg-blue-500 flex-1 rounded-r-none text-gray-50"
                 >Contact Support - support@finnypi.com</a
               >
 
               <!-- button to copy the email -->
               <button
                 @click="store.copy_text('support@finnypi.com')"
-                class="ml-auto btn bg-gray-500 text-gray-50"
+                class="btn bg-gray-500 text-gray-50 rounded-l-none"
               >
                 <!-- font awesome copy icon -->
                 <font-awesome-icon icon="fa-solid fa-copy" />
@@ -182,7 +189,7 @@ const show_logs = ref(false);
           <div class="flex flex-row items-center justify-between">
             <button
               @click="store.hide_modal('show_settings')"
-              class="btn btn-sm btn-block bg-slate-700 text-gray-100 hover:bg-white hover:text-slate-700"
+              class="btn btn-block bg-slate-700 text-gray-100 hover:bg-white hover:text-slate-700"
             >
               Close
             </button>

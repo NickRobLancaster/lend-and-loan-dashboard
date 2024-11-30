@@ -28,6 +28,7 @@ const store = useMainStore();
           class="h-16 rounded flex flex-row overflow-clip cursor-pointer"
         >
           <div
+            v-if="!item.loading"
             class="w-16 bg-white flex flex-row items-center justify-center text-white"
           >
             <!-- Font Awesome info icon -->
@@ -41,7 +42,10 @@ const store = useMainStore();
             :class="item.color"
           >
             <!-- title -->
-            <div class="text-white text-base font-bold text-center">
+            <div
+              v-if="!item.loading"
+              class="text-white text-base font-bold text-center"
+            >
               {{ item.title }}
             </div>
 
@@ -50,9 +54,11 @@ const store = useMainStore();
               <span v-if="!item.loading">
                 {{ item.message }}
               </span>
-              <div v-else>
-                <Loading />
-              </div>
+            </div>
+
+            <div v-if="item.loading">
+              <Loading :shower="true" />
+              {{ item.loading }}
             </div>
           </div>
         </div>

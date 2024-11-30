@@ -49,7 +49,7 @@ const props = defineProps({
           <div class="flex flex-row items-center justify-between">
             <button
               @click="store.hide_modal(props.shower)"
-              class="btn btn-sm btn-block bg-slate-700 text-gray-100 hover:bg-white hover:text-slate-700"
+              class="btn btn-block bg-slate-700 text-gray-100 hover:bg-white hover:text-slate-700"
             >
               Close
             </button>

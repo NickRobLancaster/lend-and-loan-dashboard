@@ -88,7 +88,7 @@ const confirm_delete = (index) => {
                 validation="required"
                 placeholder="example.com/image.jpg"
                 wrapper-class="$reset w-full"
-                input-class="$reset input bg-base-100 w-full rounded text-gray-50"
+                input-class="$reset input input-bordered bg-base-100 w-full rounded text-gray-50"
                 v-model="creating_enrollment.enrollment_date"
                 icon-class="text-gray-600 bg-gray-600"
               />
