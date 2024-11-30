@@ -42,7 +42,7 @@ const store = useMainStore();
                   store.users.find(
                     (user) =>
                       user.first_name + ' ' + user.last_name === item.title
-                  ).profile_pic_url
+                  ).profile_pic_url || '/images/default-profile-pic.jpg'
                 "
                 class="h-24 rounded-full"
               />
