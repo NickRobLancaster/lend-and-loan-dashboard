@@ -192,6 +192,13 @@ export const useMainStore = defineStore("main", {
       });
     },
 
+    // update the this.users.profile_pic_url for a user
+    update_user_profile_pic_url() {
+      // update the users local storage
+
+      localStorage.setItem("users", JSON.stringify(this.users));
+    },
+
     copy_text(text) {
       navigator.clipboard.writeText(text).then(() => {
         this.create_toast({

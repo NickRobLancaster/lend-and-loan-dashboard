@@ -139,8 +139,9 @@ const confirmDelete = (index) => {
                           v-if="show_url_input"
                           type="text"
                           v-model="item.profile_pic_url"
+                          @change="update_user_profile_pic_url()"
                           placeholder="Image URL"
-                          class="w-full p-3 bg-transparent text-base rounded input cursor-not-allowed pointer-events-none"
+                          class="w-full p-3 bg-transparent text-base rounded input input-bordered"
                         />
                       </td>
                       <td>
