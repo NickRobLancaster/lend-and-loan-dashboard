@@ -34,8 +34,20 @@ const store = useMainStore();
             class="h-full flex flex-col gap-14 justify-center p-10 w-full bg-base-100 rounded-xl"
           >
             <!-- title -->
-            <div class="text-white text-5xl font-bold text-center">
-              {{ item.title }}
+            <div
+              class="text-white text-5xl font-bold text-center flex flex-row items-center justify-center gap-5"
+            >
+              <img
+                :src="
+                  store.users.find(
+                    (user) =>
+                      user.first_name + ' ' + user.last_name === item.title
+                  ).profile_pic_url
+                "
+                class="h-24 rounded-full"
+              />
+
+              <span>{{ item.title }}</span>
             </div>
             <!-- body -->
             <div class="text-white text-4xl font-bold text-center">

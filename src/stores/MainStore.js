@@ -168,6 +168,22 @@ export const useMainStore = defineStore("main", {
           message = "Six Pack!";
         } else if (user.deal_count === 7) {
           message = "Seven Bagger!";
+        } else if (user.deal_count === 8) {
+          message = "Eight Bagger!";
+        } else if (user.deal_count === 9) {
+          message = "Nine Bagger!";
+        } else if (user.deal_count === 10) {
+          message = "Perfect 10!";
+        } else if (user.deal_count === 11) {
+          message = "Eleven Heaven!";
+        } else if (user.deal_count === 12) {
+          message = "Dirty Dozen!";
+        } else if (user.deal_count === 13) {
+          message = "Baker's Dozen!";
+        } else if (user.deal_count === 14) {
+          message = "Fourteen Bagger!";
+        } else if (user.deal_count === 15) {
+          message = "Fifteen Bagger!";
         }
 
         if (user.deal_count >= 3) {
@@ -184,6 +200,7 @@ export const useMainStore = defineStore("main", {
             setTimeout(() => {
               this.create_boast({
                 color: "bg-emerald-500",
+                profile_pic: user.profile_pic_url,
                 title: `${user.sales_user}`,
                 body: `${user.deal_count} Deals!`,
                 pic: pic,
