@@ -169,20 +169,20 @@ const show_logs = ref(false);
           <div class="flex flex-col gap-5 text-white">
             <div class="flex flex-row">
               <!-- click to email -->
-              <a
+              <!-- <a
                 href="mailto:support@finnypi.com"
                 class="btn bg-blue-500 flex-1 rounded-r-none text-gray-50"
                 >Contact Support - support@finnypi.com</a
-              >
+              > -->
 
               <!-- button to copy the email -->
-              <button
+              <!-- <button
                 @click="store.copy_text('support@finnypi.com')"
                 class="btn bg-gray-500 text-gray-50 rounded-l-none"
               >
-                <!-- font awesome copy icon -->
+                
                 <font-awesome-icon icon="fa-solid fa-copy" />
-              </button>
+              </button> -->
             </div>
           </div>
 

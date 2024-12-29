@@ -1163,7 +1163,7 @@ watch(cordovaData.value, (newVal) => {
             <div class="p-2 flex flex-col gap-5 text-white mt-auto">
               <p class="text-base">Support</p>
               <ul class="text-base list-disc list-inside gap-2 space-y-2 pl-5">
-                <li>support@finnypi.com</li>
+                <!-- <li>support@finnypi.com</li> -->
               </ul>
             </div>
 
